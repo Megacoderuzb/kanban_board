@@ -1,0 +1,16 @@
+{
+  "name": "kanban_board",
+  "version": "1.0.0",
+  "description": "napa team uchun test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "EQCLfvbkTrdUJ1wfyNI9uOdcK30z1wbWWX060mrXBNwp2Tse"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
