@@ -1,0 +1,26 @@
+section {
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+h3 {
+  text-align: center;
+}
+
+.taskscol {
+  display: flex;
+  flex-direction: column;
+}

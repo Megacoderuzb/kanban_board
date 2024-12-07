@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #3c3c3c;
+  width: 100vw;
+}
+h2 {
+  padding: 0 1rem;
+}
+a {
+  padding: 1rem;
+  color: #ccc;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
