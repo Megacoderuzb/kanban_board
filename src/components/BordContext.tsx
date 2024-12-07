@@ -20,12 +20,18 @@ interface BoardContextProps {
   addCard: (columnId: string, cardTitle: string) => void;
   removeCard: (columnId: string, cardId: string) => void;
   updateCardTitle: (columnId: string, cardId: string, newTitle: string) => void;
-  moveCard: (cardId: string, sourceColumnId: string, targetColumnId: string) => void; // Added
+  moveCard: (
+    cardId: string,
+    sourceColumnId: string,
+    targetColumnId: string
+  ) => void;
 }
 
 const BoardContext = createContext<BoardContextProps | null>(null);
 
-export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [columns, setColumns] = useState<ColumnData[]>(() => {
     const storedData = localStorage.getItem("columns");
     return storedData ? JSON.parse(storedData) : [];
@@ -69,7 +75,11 @@ export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     );
   };
 
-  const updateCardTitle = (columnId: string, cardId: string, newTitle: string) => {
+  const updateCardTitle = (
+    columnId: string,
+    cardId: string,
+    newTitle: string
+  ) => {
     setColumns((prev) =>
       prev.map((col) =>
         col.id === columnId
@@ -84,7 +94,11 @@ export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     );
   };
 
-  const moveCard = (cardId: string, sourceColumnId: string, targetColumnId: string) => {
+  const moveCard = (
+    cardId: string,
+    sourceColumnId: string,
+    targetColumnId: string
+  ) => {
     setColumns((prev) => {
       const sourceColumn = prev.find((col) => col.id === sourceColumnId);
       const targetColumn = prev.find((col) => col.id === targetColumnId);
@@ -93,7 +107,9 @@ export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       const card = sourceColumn.cards.find((card) => card.id === cardId);
       if (!card) return prev;
 
-      sourceColumn.cards = sourceColumn.cards.filter((card) => card.id !== cardId);
+      sourceColumn.cards = sourceColumn.cards.filter(
+        (card) => card.id !== cardId
+      );
       targetColumn.cards = [...targetColumn.cards, card];
 
       return [...prev];
@@ -110,7 +126,7 @@ export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         addCard,
         removeCard,
         updateCardTitle,
-        moveCard, // Added to context
+        moveCard,
       }}
     >
       {children}

@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({ card, columnId }) => {
   return (
     <div
       ref={drag}
-      className={`p-2 border rounded-md bg-black text-white max-w-xs ${
+      className={`p-2 border rounded-md bg-black text-white w-56 ${
         isDragging ? "opacity-50" : "opacity-100"
       }`}
     >
@@ -55,20 +55,28 @@ const Card: React.FC<CardProps> = ({ card, columnId }) => {
           >
             Save
           </button>
+          <button
+            onClick={() => setIsEditing(false)}
+            className="mt-1 bg-gray-500 text-white p-1 rounded-md"
+          >
+            X
+          </button>
         </div>
       ) : (
         <>
-          <p className="truncate">{card.title}</p>
+          <p className="break-words whitespace-normal text-white w-52">
+            {card.title}
+          </p>
           <div className="flex space-x-2 mt-1">
             <button
               onClick={() => setIsEditing(true)}
-              className="p-1 bg-yellow-500 text-white rounded-md"
+              className="p-1 bg-yellow-300 text-white rounded-md"
             >
               Edit
             </button>
             <button
               onClick={handleDelete}
-              className="p-1 bg-red-500 text-white rounded-md"
+              className="p-1 bg-red-400 text-white rounded-md"
             >
               Delete
             </button>

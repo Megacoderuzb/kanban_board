@@ -6,10 +6,14 @@ const Navbar = () => {
       <h2>Kanban Board</h2>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <a className="text-gray-200" href="#">
+            Home
+          </a>
         </li>
         <li>
-          <a href="#">Account</a>
+          <a className="text-gray-200" href="#">
+            Account
+          </a>
         </li>
       </ul>
     </div>
