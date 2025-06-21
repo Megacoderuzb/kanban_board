@@ -1,9 +1,10 @@
 version: '3.8'
 
 services:
-  frontend:
-    build: .
-    container_name: kanban-container
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "80:3000"  # Host:Container
-    restart: unless-stopped
+      - "3000:80" #Map container port 80 to host port 3002
+    restart: always

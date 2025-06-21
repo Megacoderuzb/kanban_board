@@ -1,28 +1,12 @@
-# FROM nginx:1.21.0-alpine
+FROM nginx:alpine
 
-# WORKDIR /usr/share/nginx/html
+# Copy the pre-built React app from the local repository to Nginx's default web root
+COPY ./build /usr/share/nginx/html
 
-# COPY dist/ .
-
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# EXPOSE 3000
-
-# CMD ["nginx", "-g", "daemon off;"]
-FROM nginx:1.21.0-alpine
-
-# Set working dir to Nginx's default static folder
-WORKDIR /usr/share/nginx/html
-
-# Remove default Nginx static files
-RUN rm -rf ./*
-
-# Copy Vite build output
-COPY dist/ .
-
-# Copy custom Nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 3000
+# Expose port 80 for Nginx
+EXPOSE 80
 
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
