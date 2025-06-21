@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 # Copy the pre-built React app from the local repository to Nginx's default web root
-COPY ./build /usr/share/nginx/html
+COPY ./dist /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
