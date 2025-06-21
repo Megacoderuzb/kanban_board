@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { useBoard } from "../Bordcontext";
+import { useBoard } from "../BordContext";
 
 interface CardProps {
   card: {

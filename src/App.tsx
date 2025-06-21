@@ -1,5 +1,5 @@
 import React from "react";
-import { BoardProvider } from "./components/Bordcontext";
+import { BoardProvider } from "./components/BordContext";
 import Board from "./components/Main/Board";
 import Navbar from "./components/Nav/Navbar";
 

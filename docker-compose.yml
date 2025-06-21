@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .             # Path to your React app
+      dockerfile: Dockerfile # Dockerfile that uses Nginx
+    container_name: react-frontend
+    ports:
+      - "80:3000"              # Expose on port 80
+    restart: unless-stopped

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useBoard } from "../Bordcontext";
+import { useBoard } from "./../BordContext";
 import Cols from "../Cols/Cols";
 
 const Board: React.FC = () => {
