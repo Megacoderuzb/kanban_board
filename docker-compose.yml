@@ -1,11 +1,14 @@
 version: '3.8'
 
 services:
+  # This is the name of our service
   frontend:
-    build:
-      context: .             # Path to your React app
-      dockerfile: Dockerfile # Dockerfile that uses Nginx
-    container_name: react-frontend
+    # Build the image from the Dockerfile in the current directory
+    build: .
+    # A friendly name for the container
+    container_name: kanban-container
+    # Map port 80 on the host machine to port 80 in the container
     ports:
-      - "80:3000"              # Expose on port 80
+      - "80:80"
+    # Restart the container automatically if it fails
     restart: unless-stopped
